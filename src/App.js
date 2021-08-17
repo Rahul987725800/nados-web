@@ -1,6 +1,5 @@
-import React from 'react';
-import Navigator from './Navigator';
-import './App.css';
+import React from "react";
+import Navigator from "./Navigator";
 
 const App = () => {
   return (
