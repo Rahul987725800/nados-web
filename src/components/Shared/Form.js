@@ -38,9 +38,6 @@ const Form = ({
       <form
         autoComplete={autoComplete}
         className={styles.form}
-        style={{
-          padding: padForm ? "2rem" : 0,
-        }}
         onSubmit={(e) => {
           e.preventDefault();
           onSubmit?.();
@@ -83,6 +80,6 @@ const useStyles = makeStyles((theme) => ({
     // border: "1px solid pink",
     display: "flex",
     flexDirection: "column",
-    gap: "1.5rem",
+    gap: "1rem",
   },
 }));

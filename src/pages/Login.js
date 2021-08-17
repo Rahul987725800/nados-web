@@ -1,7 +1,7 @@
 import { makeStyles, Box, Typography, Grid, Button } from "@material-ui/core";
-import { ReactComponent as FacebookSvg } from "../assets/Login/facebook.svg";
-import { ReactComponent as GoogleSvg } from "../assets/Login/google.svg";
-import { ReactComponent as GreenCheckSvg } from "../assets/Login/green-check.svg";
+import { ReactComponent as FacebookSvg } from "../assets/icons/Login/facebook.svg";
+import { ReactComponent as GoogleSvg } from "../assets/icons/Login/google.svg";
+import { ReactComponent as GreenCheckSvg } from "../assets/icons/Login/green-check.svg";
 import Layout from "../components/Global/Layout";
 import ConfirmButton from "../components/Shared/ConfirmButton";
 import GrayBox from "../components/Shared/GrayBox";

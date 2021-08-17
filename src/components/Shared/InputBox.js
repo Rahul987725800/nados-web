@@ -1,35 +1,37 @@
-import { makeStyles, Theme } from "@material-ui/core";
+import { makeStyles, TextField } from "@material-ui/core";
+import { useState } from "react";
 import classNames from "classnames";
+
 // console.log(CountryRegionData);
 
 function InputBox({ input, onChange, onBlur, resetValue }) {
   const styles = useStyles();
-
+  const [showPassword, setShowPassword] = useState(false);
+  let inputProps = {
+    disableUnderline: true, // <== added this
+  };
+  if (input.InputProps) {
+    inputProps = {
+      ...inputProps,
+      ...input.InputProps({ showPassword, setShowPassword }),
+    };
+  }
   return (
-    <div
-      className={classNames(styles.inputBox, {
-        [styles.errorBorderOnInput]: !!input.error,
-      })}
-    >
-      <label className="label">
-        <p className="text">{input.label}</p>
-      </label>
-
-      <div className={styles.inputContainer + " MyInputContainer"}>
-        <input
-          className={classNames(styles.input)}
-          {...input.inputProps}
-          type={input.type}
-          name={input.name}
-          value={input.value}
-          onChange={onChange}
-          placeholder={input.placeholder}
-          onBlur={onBlur}
-          autoComplete="on"
-        ></input>
-        <div className={styles.inputError}>{input.error}</div>
-      </div>
-    </div>
+    <TextField
+      classes={{ root: styles.inputContainer }}
+      variant="filled"
+      // label={input.label}
+      type={input.type}
+      name={input.name}
+      value={input.value}
+      onChange={onChange}
+      placeholder={input.placeholder}
+      onBlur={onBlur}
+      autoComplete="on"
+      helperText={input.error}
+      error={input.error}
+      InputProps={inputProps}
+    ></TextField>
   );
 }
 
@@ -37,33 +39,25 @@ export default InputBox;
 const useStyles = makeStyles((theme) => {
   // console.log(theme.breakpoints.values);
   return {
-    errorBorderOnInput: {
-      "& input, select": {
-        borderColor: "#FFC107 !important",
+    inputContainer: {
+      "& .MuiInputAdornment-positionStart": {
+        marginBottom: 10,
       },
-    },
-    inputBox: {
-      "& .label": {
-        display: "flex",
-        marginBottom: ".5rem",
-        gap: 10,
-        "& .text": {
-          fontWeight: "bold",
-          fontSize: "1.1rem",
-        },
+      "& .MuiInputBase-root": {
+        borderRadius: "4px",
       },
-    },
+      // "& svg": {
+      //   margin: "auto",
+      // },
+      "& input": {
+        marginBottom: 10,
+      },
 
-    input: {
-      width: "100%",
-      padding: 12,
-      borderRadius: "4px",
-      border: "1px solid #DDDDDD",
-      backgroundColor: "white",
-      outline: "none",
-    },
-    inputError: {
-      color: "red",
+      //   "&::-webkit-input-placeholder ": {
+      //     color: "black",
+      //     paddingBottom: 30,
+      //   },
+      // },
     },
   };
 });

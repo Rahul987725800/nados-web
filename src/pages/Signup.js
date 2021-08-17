@@ -28,12 +28,11 @@ const Signup = ({}) => {
           fsdfds
         </Grid>
 
-        <Grid item xs={4} className={styles.Login}>
+        <Grid item xs={4} className={styles.Signup}>
           <Box className="container">
             <Typography variant="h4">Sign Up</Typography>
             <Box height={30} />
-            <TextField id="filled-basic" label="Filled" variant="filled" />
-            <Box height={40} />
+
             <Form
               form={signupForm}
               formProps={signupFormProps}
@@ -41,6 +40,7 @@ const Signup = ({}) => {
               autoComplete="off"
               onSubmit={signup}
             >
+              <Box height={40} />
               <Box>
                 <ConfirmButton type="submit">Submit</ConfirmButton>
               </Box>
@@ -52,4 +52,12 @@ const Signup = ({}) => {
   );
 };
 export default Signup;
-const useStyles = makeStyles((theme) => ({}));
+const useStyles = makeStyles((theme) => ({
+  Signup: {
+    "& .container": {
+      padding: "0 50px",
+      minHeight: "100vh",
+      background: "rgba(232, 234, 239, 0.45)",
+    },
+  },
+}));
