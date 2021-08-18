@@ -11,9 +11,7 @@ const passwordInputProps = (props) => ({
   type: props.showPassword ? "text" : "password",
   startAdornment: (
     <InputAdornment position="start">
-      <IconButton>
-        <LockSvg />
-      </IconButton>
+      <LockSvg />
     </InputAdornment>
   ),
   endAdornment: (
@@ -53,9 +51,7 @@ const signupForm = {
       InputProps: (props) => ({
         startAdornment: (
           <InputAdornment position="start">
-            <IconButton>
-              <MessageSvg />
-            </IconButton>
+            <MessageSvg />
           </InputAdornment>
         ),
       }),

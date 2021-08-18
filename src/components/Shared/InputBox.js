@@ -1,6 +1,5 @@
 import { makeStyles, TextField } from "@material-ui/core";
 import { useState } from "react";
-import classNames from "classnames";
 
 // console.log(CountryRegionData);
 
@@ -41,7 +40,9 @@ const useStyles = makeStyles((theme) => {
   return {
     inputContainer: {
       "& .MuiInputAdornment-positionStart": {
-        marginBottom: 10,
+        paddingBottom: 15,
+        paddingLeft: 10,
+        marginRight: -10,
       },
       "& .MuiInputBase-root": {
         borderRadius: "4px",
@@ -50,14 +51,12 @@ const useStyles = makeStyles((theme) => {
       //   margin: "auto",
       // },
       "& input": {
-        marginBottom: 10,
+        boxSizing: "border-box",
+        maxHeight: "10px",
+        // border: "1px solid red",
+        paddingBottom: 25,
+        paddingLeft: 20,
       },
-
-      //   "&::-webkit-input-placeholder ": {
-      //     color: "black",
-      //     paddingBottom: 30,
-      //   },
-      // },
     },
   };
 });

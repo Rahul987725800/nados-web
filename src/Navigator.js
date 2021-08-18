@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Practice from "./pages/Practice";
 import Signup from "./pages/Signup";
+import TextEditor from "./pages/TextEditor/TextEditor";
 
 const Navigator = () => {
   return (
@@ -24,6 +25,9 @@ const Navigator = () => {
           </Route>
           <Route path="/home">
             <Home />
+          </Route>
+          <Route path="/editor">
+            <TextEditor />
           </Route>
         </Switch>
       </Router>
