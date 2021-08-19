@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import Chat from "./pages/Chat/Chat";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Practice from "./pages/Practice";
@@ -28,6 +29,9 @@ const Navigator = () => {
           </Route>
           <Route path="/editor">
             <TextEditor />
+          </Route>
+          <Route path="/chat">
+            <Chat />
           </Route>
         </Switch>
       </Router>

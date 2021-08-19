@@ -1,0 +1,35 @@
+.container {
+  width: 288px;
+  height: 100vh;
+  /* border: 1px solid red; */
+  margin: auto;
+  display: flex;
+  align-items: flex-end;
+}
+.box {
+  width: 100%;
+  background-color: #f0f1f4;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.profile {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  background: #f0f1f4;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.profile .name {
+  margin-left: 16px;
+  font-weight: 600;
+}
+.profile .icon {
+  margin-left: auto;
+}
+.chatItems {
+  padding: 0 1rem;
+}
